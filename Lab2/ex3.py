@@ -17,13 +17,13 @@ for i in range(100):
     for j in range(10):
         a = np.random.random()
         b = np.random.random()
-        if a < 0.3 and b < 0.3:
+        if a < 0.3 and b < 0.5:
             ss = ss + 1
-        elif a < 0.3 <= b:
+        elif a < 0.3 and b >= 0.5:
             sb = sb + 1
-        elif a >= 0.3 > b:
+        elif a >= 0.3 and b < 0.5:
             bs = bs + 1
-        elif a >= 0.3 and b >= 0.3:
+        elif a >= 0.3 and b >= 0.5:
             bb = bb + 1
     SS.append(ss)
     SB.append(sb)
