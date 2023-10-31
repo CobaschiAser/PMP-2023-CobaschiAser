@@ -19,9 +19,9 @@ cpd_alarma = TabularCPD(variable='Alarma', variable_card=2,
                         values=[[0.9999, 0.05, 0.98, 0.02], [0.0001, 0.95, 0.02, 0.98]],
                         evidence=['Cutremur', 'Incendiu'], evidence_card=[2, 2])
 
-# print(cpd_cutremur)
-# print(cpd_incendiu)
-# print(cpd_alarma)
+print(cpd_cutremur)
+print(cpd_incendiu)
+print(cpd_alarma)
 
 depozit_model.add_cpds(cpd_cutremur, cpd_incendiu, cpd_alarma)
 # print(depozit_model.get_cpds())
