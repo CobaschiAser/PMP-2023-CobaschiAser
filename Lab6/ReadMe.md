@@ -1,0 +1,2 @@
+Atunci cand numarul de clienti care cumpara un anumit produs ramane constant, numarul de clienti ce au vizitat magazinul este influentat de probabilitatea ca un client sa cumpere acel produs. Daca probabilitatea aceasta creste, atunci numarul de clienti care vor vizita magazinul scade. Daca probabilitatea aceasta ar scadea, atunci numarul de clienti care ar vizita magazinul ar creste.
+Daca numarul de clienti care cumpara un produs creste, atunci si numarul de clienti care au vizitat magazinul va creste. 
