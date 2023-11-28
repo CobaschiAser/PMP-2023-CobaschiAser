@@ -129,7 +129,6 @@ for i in range(100):
 # 2
 
 with pm.Model() as model:
-    alpha = 3
     nr_clienti = pm.Poisson("nr_clienti", mu=20)
     timp_asteptare = pm.Normal("timp_asteptare", mu=2, sigma=0.5)
     observation = pm.Poisson("obs", mu=timp_asteptare, observed=meanlist)
@@ -140,3 +139,5 @@ with pm.Model() as model:
         plt.show()
 
 # 3
+
+
