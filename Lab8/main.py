@@ -37,3 +37,21 @@ plt.show()
 az.plot_posterior(idata_g, var_names='beta_2', hdi_prob=0.95)
 plt.show()
 
+# c)
+
+mean_beta1 = idata_g.posterior['beta_1'].mean().item()
+mean_beta2 = idata_g.posterior['beta_2'].mean().item()
+
+print(f"Mean of beta_1: {mean_beta1}")
+print(f"Mean of beta_2: {mean_beta2}")
+
+# Mean of beta_1: 15.07527451317021
+# Mean of beta_2: 1.933232042730788
+
+# Daca analizam formula lui  mu = pm.Deterministic('mu', alpha + beta_1 * speed + beta_2 * hard_drive),
+# deducem ca pentru o crestere a lui speed cu o unitate, mu va creste cu aproximativ 15 unitati (din media lui beta_1),
+# presupunand ca toate celelalte variabile ar ramane constante
+# Analog, daca hard_drive va creste cu o unitate, atunci mu va creste cu aproximativ 2 unitati( din media lui beta_2)
+# presupunand ca toate celelalte variabile ar ramane constante
+# in concluzie, frecventa procesorului si marimea hard_diskului sunt predictori utili pentru pret,
+# dar influenta pe care o are frecventa este mai mare decat influenta pe care o are marimea hard_diskului.
