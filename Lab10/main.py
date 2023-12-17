@@ -77,5 +77,3 @@ plt.scatter(x_1s[0], y_1s, c='C0', marker='.')
 plt.legend()
 
 
-# Ex 3
-
