@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 import arviz as az
 import pytensor as pt
 
+
+### EX 1
 # a) Incarcarea datelor
 BostonHousing = pd.read_csv('BostonHousing.csv')
 medv = BostonHousing['medv'].values
@@ -60,4 +62,25 @@ y_ppc = ppc.posterior_predictive['y_pred'].stack(sample=("chain", "draw")).value
 az.plot_posterior(y_ppc,hdi_prob=0.5)
 
 # asa cum se vede din grafic, intervalul ar fi [19-25] cu media 22.
+
+
+### EX 2
+
+# a)
+def posterior_grid(grid_points=50, first_success = 5):
+    grid = np.linspace(0, 1, grid_points)
+    prior = np.repeat(1 / grid_points, grid_points)  # uniform prior
+    # likelihood este probabilitatea ca sa obtinem stema abia la a "fisrt_success" incercare
+    likelihood = stats.geom.pmf(first_success, 0.5)
+    print(likelihood)
+    posterior = likelihood * prior
+    posterior /= posterior.sum()
+    return grid, posterior
+
+# cateva exemple ale faptului ca functioneaza bine
+# print(posterior_grid(first_success = 1)[1]) # 0.5
+# print(posterior_grid(first_success = 3)[1]) # 0.2
+
+# b)
+
 
